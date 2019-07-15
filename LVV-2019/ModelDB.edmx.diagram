@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="986af5033c4549c1bbebba5ecea4f9f6" Name="Diagram1">
+        <EntityTypeShape EntityType="My_KPModel.Addresses" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="My_KPModel.Credentials" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="My_KPModel.Events" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="My_KPModel.Interests" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="My_KPModel.Places" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="My_KPModel.Roles" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="My_KPModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="My_KPModel.UserEvents" Width="1.5" PointX="7.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="My_KPModel.UserInterests" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="My_KPModel.Users" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="My_KPModel.FK_Places_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="My_KPModel.FK_Users_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="My_KPModel.FK__Users__log_pass__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="My_KPModel.FK__Event__event_pla__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="My_KPModel.FK__User_even__id_ev__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="My_KPModel.FK_Events_Interests" ManuallyRouted="false" />
+        <AssociationConnector Association="My_KPModel.FK__User_inte__id_in__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="My_KPModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="My_KPModel.FK__User_even__id_us__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="My_KPModel.FK__User_inte__id_us__20C1E124" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

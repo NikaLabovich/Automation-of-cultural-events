@@ -1,0 +1,239 @@
+﻿<Window x:Class="LVV_2019.GeneralWindow2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"      
+        xmlns:local="clr-namespace:LVV_2019"       
+        mc:Ignorable="d"
+        Title="GeneralWindow2" Height="670" Width="1200" Background="#c3efdd" 
+        WindowStyle="None" ResizeMode="NoResize" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="HeaderBrush">
+            <GradientStop Color="#31b57f"/>
+            <GradientStop Color="#36444a" Offset="0.7"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.ColumnSpan="4" Width="1200" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center"   Background="#31b57f">
+            <Label Content="Welcome," Margin="350,0,0,0" Background="#31b57f" FontFamily="LUCIDA SANS UNICODE" FontSize="35" />
+            <Label x:Name="Label1" Background="#31b57f" FontFamily="LUCIDA SANS UNICODE" FontSize="35" />
+        </StackPanel>
+        <DockPanel Grid.Row="1">
+            <Canvas>
+                <Border  VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel>
+                        <Border BorderBrush="#31b57f"  BorderThickness="2"
+                                Height="565" Width="1070" Margin="95,20,10,10">
+                            <Border.Effect>
+                                <DropShadowEffect/>
+                            </Border.Effect>
+                            <Border Grid.ColumnSpan="4" Background="#c3efdd">
+                                <Canvas>
+                                    <Grid x:Name="forProfile"  Visibility="Hidden">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Margin="100,0,0,0" HorizontalAlignment="Center" FontFamily="LUCIDA SANS UNICODE" FontSize="30" Height="50" Content="First Name"/>
+                                        <TextBlock Grid.Row="1" Margin="100,0,0,0"  x:Name="FirsName" FontFamily="LUCIDA SANS UNICODE" FontSize="15" Height="50" Width="300"/>
+                                        <Label Grid.Row="2" Margin="100,0,0,0" HorizontalAlignment="Center" Content="Last Name"  FontFamily="LUCIDA SANS UNICODE" FontSize="30" Height="50"/>
+                                        <TextBlock Grid.Row="3" Height="50" Margin="100,0,0,0" x:Name="LastName" FontFamily="LUCIDA SANS UNICODE" FontSize="15"  Width="300"/>
+                                        <Label Grid.Row="4" HorizontalAlignment="Center" Margin="100,0,0,0" Content="Birthday"  FontFamily="LUCIDA SANS UNICODE" FontSize="30" Height="50"/>
+                                        <TextBlock Grid.Row="5" Height="50" x:Name="Birthday" Margin="100,0,0,0" FontFamily="LUCIDA SANS UNICODE" FontSize="15"  Width="300"/>
+                                        <Label Grid.Row="6" HorizontalAlignment="Center" Content="Address" Margin="100,0,0,0" FontFamily="LUCIDA SANS UNICODE" FontSize="30" Height="50"/>
+                                        <TextBlock Grid.Row="7" Height="50" x:Name="Address" Width="300" Margin="100,0,0,0" FontFamily="LUCIDA SANS UNICODE" FontSize="15" />
+                                        <Label Grid.Row="8" HorizontalAlignment="Center" Content="Interests" Margin="100,0,0,0" FontFamily="LUCIDA SANS UNICODE" FontSize="30" Height="50"/>
+                                        <TextBlock Grid.Row="9" Height="50" x:Name="Interests" Width="300" Margin="100,0,0,0" FontFamily="LUCIDA SANS UNICODE" FontSize="15" />
+                                        <DataGrid Grid.Column="1" Grid.RowSpan="10" Background="#545d6a" Margin="40,10,10,10" FontFamily="LUCIDA SANS UNICODE" x:Name="MyDataGrid" AutoGenerateColumns="False" Width="auto" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="120"/>
+                                                <DataGridTextColumn Binding="{Binding Places.Name}" Header="Place" Width="150"/>
+                                                <DataGridTextColumn Binding="{Binding Places.Addresses}" Header="Address" Width="180"/>
+                                                <DataGridTextColumn Binding="{Binding Date}" Header="Date" Width="165"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid x:Name="forEvents" Visibility="Hidden" Width="1068">
+                                            <StackPanel>
+                                                <StackPanel Margin="0,20,0,0" Orientation="Horizontal" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                    <Button Content="Cinema" Width="170" Foreground="White" BorderThickness="2" BorderBrush="#31b57f" FontFamily="LUCIDA SANS UNICODE" FontSize="15" Background="#343d46" Click="SelectCinemaButton"/>
+                                                    <Button Content="Theater" Width="170" Foreground="White" BorderThickness="2" BorderBrush="#31b57f" FontFamily="LUCIDA SANS UNICODE" FontSize="15" Background="#343d46" Click="SelectTheaterButton" />
+                                                    <Button Content="Concerts"  Width="170" Foreground="White" BorderThickness="2" BorderBrush="#31b57f" FontFamily="LUCIDA SANS UNICODE" FontSize="15" Background="#343d46"  Click="SelectConcertsButton"/>
+                                                   <Button Content="Sport"  Width="170" Foreground="White" BorderThickness="2" BorderBrush="#31b57f" FontFamily="LUCIDA SANS UNICODE" FontSize="15" Background="#343d46" Click="SelectSportsButton"/>
+                                                     <Button Content="Coffee"  Width="170" Foreground="White" BorderThickness="2" BorderBrush="#31b57f" FontFamily="LUCIDA SANS UNICODE" FontSize="15" Background="#343d46" Click="SelectCoffeeButton"/>
+                                                    <Button Content="Exibitions"  Width="170" Foreground="White" BorderThickness="2" BorderBrush="#31b57f" FontFamily="LUCIDA SANS UNICODE" FontSize="15" Background="#343d46" Click="SelectExibitionButton"/>
+
+                                                </StackPanel>
+                                                <ComboBox x:Name="ComboBoxPlaces" Height="40" HorizontalAlignment="Center" Margin="20" Background="#343d46" Width="250" SelectionChanged="ComboBoxPlaces_SelectionChanged"/>
+                                                <DataGrid x:Name="DataGridEvents" AutoGenerateColumns="False" Width="730" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}">
+                                                    <DataGrid.Columns>
+                                                        <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="160"/>
+                                                        <DataGridTextColumn Binding="{Binding Places.Name}" Header="Place" Width="150"/>
+                                                        <DataGridTextColumn Binding="{Binding Interests.Name}" Header="Interest" Width="110"/>
+                                                        <DataGridTextColumn Binding="{Binding Places.Addresses}" Header="Address" Width="210"/>
+                                                        <DataGridTextColumn Binding="{Binding Date}" Header="Date" Width="210"/>
+                                                    </DataGrid.Columns>
+                                                </DataGrid>
+                                                <Button Content="Subscribe" Width="120" Foreground="White" Height="50" Margin="20" BorderThickness="2" BorderBrush="#31b57f" FontFamily="LUCIDA SANS UNICODE" FontSize="15" Background="#343d46" Click="SubscribeButton"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Grid>
+                                    
+                                    <Grid x:Name="forRec" Visibility="Hidden" >
+                                        <DataGrid x:Name="EventsRecommendedDataGrid" AutoGenerateColumns="False" Width="1068">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="220"/>
+                                                <DataGridTextColumn Binding="{Binding Places.Name}" Header="Place" Width="180"/>
+                                                <DataGridTextColumn Binding="{Binding Places.Addresses}" Header="Address" Width="250"/>
+                                                <DataGridTextColumn Binding="{Binding Date}" Header="Date" Width="250"/>
+                                                <DataGridTextColumn Binding="{Binding InterestId}" Header="Type" Width="210"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </Grid>
+
+                                    <Grid x:Name="forRating" Margin="30" Width="1000" Visibility="Hidden">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Content="Top attendance" HorizontalAlignment="Center" FontFamily="LUCIDA SANS UNICODE" FontSize="30" Height="50"  />
+
+                                        <DataGrid Grid.Row="1" Width="700" x:Name="EventsRatingDataGrid"  AutoGenerateColumns="True" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle1}">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Binding="{Binding Key.Name}"  Header="Name" Width="350"/>
+                                                <DataGridTextColumn Binding="{Binding Value}" Header="Count" Width="350"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+
+                                        <Label Grid.Row="2" Margin="30" Content="If you wanna to subscribe, you can do this!" HorizontalAlignment="Center" FontFamily="LUCIDA SANS UNICODE" FontSize="30" Height="50"  />
+                                        <Button Grid.Row="3" Height="50" Content="Click here" Width="170" Foreground="White" BorderThickness="2" BorderBrush="#31b57f" FontFamily="LUCIDA SANS UNICODE" FontSize="20" Background="#343d46" Click="Button_Click_6"/>
+                                    </Grid>
+
+                                    <Grid x:Name="forEventList" Width="1000" Visibility="Hidden">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Content="Your cultural programm" HorizontalAlignment="Center" FontFamily="LUCIDA SANS UNICODE" FontSize="30" Height="50"  />
+                                        <DataGrid Grid.Row="1" x:Name="EventsListDataGrid" AutoGenerateColumns="False" Width="730" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="160"/>
+                                                <DataGridTextColumn Binding="{Binding Places.Name}" Header="Place" Width="150"/>
+                                                <DataGridTextColumn Binding="{Binding Places.Addresses}" Header="Address" Width="210"/>
+                                                <DataGridTextColumn Binding="{Binding Date}" Header="Date" Width="210"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                        <Label Content="If you wanna to unsubscribe" Grid.Row="2" HorizontalAlignment="Center" FontFamily="LUCIDA SANS UNICODE" FontSize="30" Height="50" />
+                                        <Button Margin="30" Grid.Row="3" Height="50" Content="Click here" Width="170" Foreground="White" BorderThickness="2" BorderBrush="#31b57f" FontFamily="LUCIDA SANS UNICODE" FontSize="20" Background="#343d46" Click="Button_Click_7"/>
+                                    </Grid>
+                                    <Button Content="Log in to another account" BorderBrush="Black" HorizontalAlignment="Right" Background="#31b57f" FontFamily="LUCIDA SANS UNICODE" Canvas.Left="914" Canvas.Top="-63" Click="Button_Click_5"/>
+                                </Canvas>
+                            </Border>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                <Border BorderBrush="#31b57f" BorderThickness="2">
+                    <StackPanel x:Name="StackPanel" Height="610" Background="#343d46">
+                        <Grid Margin="10" Background="Transparent" MouseDown="Grid_MouseDown">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition  />
+                            </Grid.ColumnDefinitions>
+                            <Path Width="32" Height="16"  Stroke="#31b57f" Data="M 0,0.5 h 32 M 0,8.5 h 32 M 0,15.5 h 32"/>
+                            <Button Content="Menu"  Grid.Column="1" Width="0" BorderBrush="#343d46" Margin="10,0,0,0" VerticalAlignment="Center"  Visibility="Collapsed"  Style="{DynamicResource ButtonStyle2}"/>
+                        </Grid>
+                        <Grid Margin="10" Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="\\Mac\Home\Desktop\icons\profile2.png" Width="35" Height="35"/>
+                            <Button Content="Profile" Grid.Column="1" BorderBrush="#343d46" Width="0" Margin="10,0,0,0" VerticalAlignment="Center" Visibility="Collapsed" Click="Button_Click" Style="{DynamicResource ButtonStyle2}"/>
+                        </Grid>
+                        <Grid Margin="10" Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="\\Mac\Home\Desktop\icons\events3.png" Width="35" Height="35"/>
+                            <Button Content="Events" Grid.Column="1" BorderBrush="#343d46" Width="0" Margin="10,0,0,0" VerticalAlignment="Center" Visibility="Collapsed" Click="Button_Click_2" Style="{DynamicResource ButtonStyle2}"/>
+                        </Grid>
+                        <Grid Margin="10" Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="\\Mac\Home\Desktop\icons\recommended3.png" Width="35" Height="35"/>
+                            <Button Content="Recommended" Grid.Column="1" BorderBrush="#343d46" Width="0" Margin="10,0,0,0" VerticalAlignment="Center" Visibility="Collapsed" Click="Button_Click_1" Style="{DynamicResource ButtonStyle2}"/>
+                        </Grid>
+                        <Grid Margin="10" Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="\\Mac\Home\Desktop\icons\rating2.png" Width="35" Height="35"/>
+                            <Button Content="Rating" Grid.Column="1" Width="0" BorderBrush="#343d46" Margin="10,0,0,0" VerticalAlignment="Center" Visibility="Collapsed" Click="Button_Click_3" Style="{DynamicResource ButtonStyle2}"/>
+                        </Grid>
+                        <Grid Margin="10" Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="\\Mac\Home\Desktop\icons\calendar.png" Width="35" Height="35"/>
+                            <Button Content="Event list" Grid.Column="1" Width="0" BorderBrush="#343d46" Margin="10,0,0,0" VerticalAlignment="Center" Visibility="Collapsed" Click="Button_Click_4" Style="{DynamicResource ButtonStyle2}"/>
+                        </Grid>
+
+                        <!--<dockpanel horizontalalignment="center" verticalalignment="center">
+                        <button content="events" borderbrush="#343d46" padding="-65,0,40,0" width="100" verticalalignment="center" click="button_click_2" style="{dynamicresource buttonstyle2}"/>
+                        <image source="\\mac\home\desktop\icons\events3.png" margin="5,5,-20,5" width="35" height="35"/>
+                    </dockpanel>
+                    <dockpanel horizontalalignment="center" verticalalignment="center">
+                        <button content="recommended" borderbrush="#343d46" padding="-40,0,0,0" width="100" verticalalignment="center" click="button_click_1" style="{dynamicresource buttonstyle2}"/>
+                        <image source="\\mac\home\desktop\icons\recommended3.png" margin="5,5,-20,5" width="35" height="35"/>
+                    </dockpanel>
+                    <dockpanel horizontalalignment="center" verticalalignment="center">
+                        <button content="rating" borderbrush="#343d46" padding="-65,0,40,0" width="100" verticalalignment="center" click="button_click_3" style="{dynamicresource buttonstyle2}"/>
+                        <image source="\\mac\home\desktop\icons\rating2.png" margin="5,5,-20,5" width="35" height="35"/>
+                    </dockpanel>
+                    <dockpanel horizontalalignment="center" verticalalignment="center">
+                        <button content="events list" borderbrush="#343d46" padding="-45,0,40,0" width="100" verticalalignment="center" click="button_click_4" style="{dynamicresource buttonstyle2}"/>
+                        <image source="\\mac\home\desktop\icons\calendar.png" margin="5,5,-20,5" width="35" height="35"/>
+                    </dockpanel>-->
+                    </StackPanel>
+                </Border>
+
+            </Canvas>
+        </DockPanel>
+    </Grid>
+</Window>
